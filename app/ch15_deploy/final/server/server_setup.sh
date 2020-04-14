@@ -47,6 +47,11 @@ pip install --upgrade pip setuptools
 pip install --upgrade httpie glances
 pip install --upgrade uwsgi
 
+# nano
+# to the bottom add this:
+# source /apps/venv/bin/activate
+# so always opens w/ this enve
+# Ctrl + X will quit the editor and you will be asked if you want to save your changes. If you do, press Y for Yes.
 
 # clone the repo:
 cd /apps

@@ -13,7 +13,7 @@ def global_init(db_file: str):
         return
 
     if not db_file or not db_file.strip():
-        raise Exception("You must specify a db file.")
+        raise Exception("You must specify a data file.")
 
     conn_str = 'sqlite:///' + db_file.strip()
     print("Connecting to DB with {}".format(conn_str))

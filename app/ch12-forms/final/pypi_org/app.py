@@ -1,7 +1,6 @@
 import os
 import sys
 import flask
-
 folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, folder)
 
@@ -11,13 +10,9 @@ app = flask.Flask(__name__)
 
 
 def main():
-    configure()
-    app.run(debug=True)
-
-
-def configure():
     register_blueprints()
     setup_db()
+    app.run(debug=True)
 
 
 def setup_db():
@@ -37,11 +32,8 @@ def register_blueprints():
 
     app.register_blueprint(package_views.blueprint)
     app.register_blueprint(home_views.blueprint)
-    app.register_blueprint(account_views.blueprint)
     app.register_blueprint(cms_views.blueprint)
-
+    app.register_blueprint(account_views.blueprint)
 
 if __name__ == '__main__':
     main()
-else:
-    configure()

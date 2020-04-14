@@ -4,3 +4,4 @@ sqlalchemy
 progressbar2
 python-dateutil
 
+alembic

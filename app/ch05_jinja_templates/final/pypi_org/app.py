@@ -1,11 +1,6 @@
-import os
-import sys
 import flask
-folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.insert(0, folder)
-
-
 from pypi_org.infrastructure.view_modifiers import response
+
 
 app = flask.Flask(__name__)
 

@@ -1,17 +1,19 @@
-import datetime
-from typing import List
-
 import sqlalchemy as sa
+import datetime
 import sqlalchemy.orm as orm
 from pypi_org.data.modelbase import SqlAlchemyBase
 from pypi_org.data.releases import Release
+from typing import List
 
 
 class Package(SqlAlchemyBase):
     __tablename__ = 'packages'
 
     id = sa.Column(sa.String, primary_key=True)
-    created_date = sa.Column(sa.DateTime, default=datetime.datetime.now, index=True)
+    created_date = sa.Column(
+        sa.DateTime,
+        default=datetime.datetime.now,
+        index=True)
     summary = sa.Column(sa.String, nullable=False)
     description = sa.Column(sa.String, nullable=True)
 
@@ -33,11 +35,3 @@ class Package(SqlAlchemyBase):
 
     def __repr__(self):
         return '<Package {}>'.format(self.id)
-
-
-# p = Package()  # one query
-#
-# print(p.id)
-# print("All releases")
-# for r in p.releases:
-#     print("{}.{}.{}".format(r.major_ver, r.minor_ver, r.build_ver))

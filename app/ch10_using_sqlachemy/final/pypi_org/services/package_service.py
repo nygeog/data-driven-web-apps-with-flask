@@ -9,10 +9,10 @@ from pypi_org.data.releases import Release
 def get_latest_releases(limit=10) -> List[Release]:
     session = db_session.create_session()
 
-    releases = session.query(Release). \
-        options(sqlalchemy.orm.joinedload(Release.package)). \
-        order_by(Release.created_date.desc()). \
-        limit(limit). \
+    releases = session.query(Release).\
+        options(sqlalchemy.orm.joinedload(Release.package)).\
+        order_by(Release.created_date.desc()).\
+        limit(limit).\
         all()
 
     session.close()

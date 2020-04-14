@@ -3,6 +3,7 @@ import flask
 from pypi_org.infrastructure.view_modifiers import response
 import pypi_org.services.package_service as package_service
 
+
 blueprint = flask.Blueprint('packages', __name__, template_folder='templates')
 
 
@@ -14,5 +15,4 @@ def package_details(package_name: str):
 
 @blueprint.route('/<int:rank>')
 def popular(rank: int):
-    print(type(rank), rank)
     return "The details for the {}th most popular package".format(rank)
