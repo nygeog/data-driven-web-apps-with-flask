@@ -58,11 +58,12 @@ cd /apps
 # git clone https://github.com/talkpython/data-driven-web-apps-with-flask app_repo
 git clone https://github.com/nygeog/data-driven-web-apps-with-flask app_repo
 # Setup the web app:
-cd cd /apps/app_repo/app/ch15_deploy/final/
+cd /apps/app_repo/app/ch15_deploy/final/
 pip install -r requirements.txt
 
 # Copy and enable the daemon
 cp /apps/app_repo/app/ch15_deploy/final/server/pypi.service /etc/systemd/system/pypi.service
+cp app_repo/app/ch15_deploy/final/server/pypi.service /etc/systemd/system/pypi.service
 cp pypi.service /etc/systemd/system/pypi.service
 
 
